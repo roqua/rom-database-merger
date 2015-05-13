@@ -27,7 +27,7 @@ class Schema
     def id_columns
       {
         :activities=>[:id, :dossier_id, :actor_id, :subject_id],
-        :answers=>[:id, :protocol_id, :measurement_id, :completed_by, :subject_id, :questionnaire_id, :owner_id, :team_id, :fill_out_task_id, :remote_id, :non_response_id, :requester_id],
+        :answers=>[:id, :protocol_id, :measurement_id, :completed_by, :subject_id, :questionnaire_id, :owner_id, :team_id, :fill_out_task_id, :remote_id, :non_response_id, :requester_id], # added completed_by
         :answers_fill_out_requests=>[:answer_id, :fill_out_request_id],
         :answers_fill_out_sessions=>[:id, :answer_id, :fill_out_session_id],
         :answers_reports=>[:id, :answer_id, :report_id],
@@ -57,11 +57,13 @@ class Schema
         :professionals_patients=>[:patient_id, :professional_id],
         :protocol_subscriptions=>[:id, :patient_id, :protocol_id, :started_by_id, :invitation_template_id, :measurement_sequence_id, :text_message_template_id],
         :protocols=>[:id, :organization_id],
-        :quby_answers=>[:id, :questionnaire_id],
+        :quby_answers=>[:id], # removed: :questionnaire_id (pointed to id in Quby when it was a seperate Rails app and questionnaire dsls were stored in the db)
         :questionnaires=>[:id, :bulk_id, :original_id],
         :report_templates=>[:id, :protocol_id, :organization_id],
         :reported_questionnaires=>[:id, :report_template_id, :questionnaire_id],
         :reports=>[:id, :report_template_id, :patient_id],
+        # removed: sessions table
+        # removed: schema migrations table
         :teams=>[:id, :owner_id, :organization_id],
         :text_message_templates=>[:id, :organization_id, :protocol_id],
         :text_messages=>[:id, :text_message_template_id, :dossier_id],

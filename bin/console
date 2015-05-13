@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'bundler/setup'
+
+require_relative '../config/database'
+require_relative '../config/schema'
+
+require 'pry'
+binding.pry

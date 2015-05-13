@@ -1,0 +1,3652 @@
+---
+:activities:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :dossier_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :action
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :actor_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :actor_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :subject_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :subject_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:answers:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :label
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :vals
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :sttus
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :scors
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :params
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :measurement_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :completed_by
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :subject_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :questionnaire_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :archived
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :owner_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :d_action
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :outcome
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :team_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :first
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :old_remote_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :token
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :completed_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :completed_by_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :last_oru_status
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(1)
+    :type: :string
+    :ruby_default: 
+    :max_length: 1
+- - :last_oru_sent_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :project_serial
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :fill_out_task_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :respondent_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :notes
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :open_from
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :open_till
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :emailed_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :fill_out_task_order
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :labels
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :remote_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :non_response_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :aborted
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :needs_outcome_regeneration
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :requester_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:answers_fill_out_requests:
+- - :answer_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :fill_out_request_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:answers_fill_out_sessions:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :answer_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :fill_out_session_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:answers_reports:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :answer_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :report_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:api_tokens:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :consumer_key
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :consumer_secret_digest
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :revoked
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :last_usage_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :ip_ranges
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :rights
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+:auth_nonces:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :consumer_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :nonce
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :timestamp
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:auth_tokens:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :consumer_key
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :consumer_secret
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :revoked
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :last_usage_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :ip_ranges
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :rights
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+:delayed_jobs:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :priority
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 0
+- - :attempts
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 0
+- - :handler
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :last_error
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :run_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :locked_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :failed_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :locked_by
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :queue
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+:dossier_epd_id_changes:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :requester_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :old_epd_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :new_epd_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :logs
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:email_bounces:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :reason
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :email
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :last_date
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :epd_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :respondent_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :dossier_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :bounce_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+:export_versions:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :version
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :headers
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: mediumtext
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :filter_non_oru_keys
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :keep_non_prefixed_keys
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :expired
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:fill_out_requests:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :dossier_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :respondent_type
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :callback_url
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :protocol_subscription_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :measurement_sequence_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:fill_out_sessions:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :session_key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :respondent_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :measurement_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :current_answer_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :completer_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :completer_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :patient_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :return_url
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :session_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :filled_out_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :quby_parameters
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :team_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :progress_url
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+:fill_out_sessions_questionnaires:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :fill_out_session_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :questionnaire_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:fill_out_tasks:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :patient_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :respondent_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :created_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:highcharts_json_caches:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :token
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :json
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: mediumtext
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:invitation_templates:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :team_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :name
+  - :primary_key: false
+    :allow_null: false
+    :default: ''
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: ''
+    :max_length: 255
+- - :description
+  - :primary_key: false
+    :allow_null: false
+    :default: ''
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: ''
+    :max_length: 255
+- - :content
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :type_of
+  - :primary_key: false
+    :allow_null: false
+    :default: ''
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: ''
+    :max_length: 40
+- - :active
+  - :primary_key: false
+    :allow_null: false
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:invitations:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :code
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :content
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :sysvars
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :sets
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :user_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :team_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :is_template
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :archived
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :mail_schedule
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :mailed_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :parent_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :type_of
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :completed
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :downloaded_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :completed_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :professional_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :open_from
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :open_till
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :form_data
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:invitations_questionnaires:
+- - :invitation_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :questionnaire_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:measurement_sequences:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :dossier_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :flags
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :textvars
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:measurements:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :label
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(20)
+    :type: :string
+    :ruby_default: 
+    :max_length: 20
+- - :parent_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :tag
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :rank
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :settings
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :project_name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :position
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:measurements_questionnaires:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :measurement_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :questionnaire_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :timespan_value
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :timespan_unit
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :position
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :preselected
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+:non_responses:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :reason
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :non_response_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :reason_group
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :reason_option
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :reason_code
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :reason_other
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+:organizations:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :core_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :settings_hash
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :current_export_version_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :secrets_hash
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :domains
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+:patients:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :user_name
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(80)
+    :type: :string
+    :ruby_default: 
+    :max_length: 80
+- - :bsn
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(80)
+    :type: :string
+    :ruby_default: 
+    :max_length: 80
+- - :hashed_password
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :salt
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :password_window
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :hashed_token
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :token_expiry
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :last_login
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :tester
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :archived
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :loglevel
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :terms
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :preferences
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :language
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :faulty_login
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 0
+- - :login_lock
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :idents
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :details
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :epd_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :research
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: 
+- - :sent_wegweis_invitation_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :role_key
+  - :primary_key: false
+    :allow_null: false
+    :default: subj
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: subj
+    :max_length: 40
+- - :miniscan_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :deleted_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :zero_or_deleted_at
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 0
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :patty_patient_mongo_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :patty_patient_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:patty_patients:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :organization_key
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :epd_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :mongo_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :identities
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :prefix
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :firstname
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :initials
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :lastname
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :display_name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :email
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :emails
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :phone_home
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :phone_work
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :phone_cell
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :birthdate
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: date
+    :type: :date
+    :ruby_default: 
+- - :gender
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :country_of_birth
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :address_type
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :street
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :city
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :zipcode
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :country
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :source
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :last_sync_success
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :last_sync_failure
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :synced_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :status
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :error
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: mediumtext
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:professionals:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :user_name
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(80)
+    :type: :string
+    :ruby_default: 
+    :max_length: 80
+- - :bsn
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(80)
+    :type: :string
+    :ruby_default: 
+    :max_length: 80
+- - :hashed_password
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :salt
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :password_window
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :hashed_token
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :token_expiry
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :last_login
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :tester
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :archived
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :loglevel
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :terms
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :preferences
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :language
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :faulty_login
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 0
+- - :login_lock
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :idents
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :details
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :epd_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :research
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: 
+- - :sent_wegweis_invitation_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :firstname
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :lastname
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :phone_cell
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :email
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :role_key
+  - :primary_key: false
+    :allow_null: false
+    :default: profess
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: profess
+    :max_length: 40
+- - :deleted_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :zero_or_deleted_at
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 0
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:professionals_patients:
+- - :patient_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :professional_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:protocol_subscriptions:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :state
+  - :primary_key: false
+    :allow_null: false
+    :default: a
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: a
+    :max_length: 255
+- - :patient_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :start_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :daily_start_time
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :last_emitted
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :stop_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :started_by_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :invitation_template_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :prepare_all_measurements
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :measurement_sequence_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :last_run_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :text_message_template_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:protocols:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(80)
+    :type: :string
+    :ruby_default: 
+    :max_length: 80
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :settings
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :automatic
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :position
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:quby_answers:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :old_quby_record_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :questionnaire_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :questionnaire_key
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :raw_params
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :value
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :import_notes
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :patient
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :token
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :active
+  - :primary_key: false
+    :allow_null: false
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :test
+  - :primary_key: false
+    :allow_null: false
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :started_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :completed_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :outcome_generated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :scores
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: mediumtext
+    :type: :string
+    :ruby_default: 
+- - :actions
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :completion
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :dsl_last_update
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :flags
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :textvars
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:questionnaires:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(120)
+    :type: :string
+    :ruby_default: 
+    :max_length: 120
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :vars
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :quests
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :rank
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :bulk
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :d_qtypes
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: mediumtext
+    :type: :string
+    :ruby_default: 
+- - :bulk_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :properties
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :original_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :remote_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :display_mode
+  - :primary_key: false
+    :allow_null: true
+    :default: paged
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: paged
+    :max_length: 255
+- - :short_description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :license
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :licensor
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+:report_templates:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :content
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: mediumtext
+    :type: :string
+    :ruby_default: 
+- - :time_window
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :published_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :report_calculation_key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+:reported_questionnaires:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :report_template_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :questionnaire_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:reports:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :content
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: mediumtext
+    :type: :string
+    :ruby_default: 
+- - :report_template_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :form_data
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :patient_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+:schema_migrations:
+- - :version
+  - :primary_key: true
+    :auto_increment: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+:sessions:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :session_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :data
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:teams:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :settings
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
+- - :description
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :template
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :archived
+  - :primary_key: false
+    :allow_null: true
+    :default: '0'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: false
+- - :owner_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+:text_message_templates:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :invitation_content
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :reminder_content
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :organization_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :active
+  - :primary_key: false
+    :allow_null: true
+    :default: '1'
+    :db_type: tinyint(1)
+    :type: :boolean
+    :ruby_default: true
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:text_messages:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :name
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :content
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :event
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :text_message_template_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :dossier_id
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+:tokens:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :key
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(40)
+    :type: :string
+    :ruby_default: 
+    :max_length: 40
+- - :key_expiry
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :created_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :updated_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 
+- - :patient_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :type_of
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: varchar(255)
+    :type: :string
+    :ruby_default: 
+    :max_length: 255
+- - :last_oru_sent_at
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: datetime
+    :type: :datetime
+    :ruby_default: 

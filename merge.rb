@@ -15,4 +15,5 @@ VerifySchema.run!(SOURCE_COPY)
 VerifySchema.run!(TARGET_COPY)
 
 IncrementIdColumns.new(SOURCE_COPY, TARGET_COPY).perform(1_000_000)
+ModifyDelayedJobs.new(SOURCE_COPY, TARGET_COPY),perform(1_000_000)
 ImportData.new(SOURCE_COPY, TARGET_COPY).perform

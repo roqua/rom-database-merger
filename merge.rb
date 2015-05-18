@@ -8,6 +8,7 @@ require_relative 'lib/verify_schema'
 require_relative 'lib/increment_id_columns'
 require_relative 'lib/import_data'
 require_relative 'lib/modify_delayed_jobs'
+require_relative 'lib/manage_export_versions'
 
 SOURCE_COPY = CopyDatabase.copy(Config[:source], "#{Config[:source]}_temp")
 TARGET_COPY = CopyDatabase.copy(Config[:target], "#{Config[:target]}_temp")

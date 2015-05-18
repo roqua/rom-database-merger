@@ -10,17 +10,47 @@ class Schema
     #   - schema_migrations (both apps should be running same version)
     #   - questionnaires (we change the questionnaire ids to match before merging)
     def table_import_order
-      [
-        :highcharts_json_caches,
-        :organizations, :protocols, :measurements, :teams, :api_tokens, :auth_tokens, :auth_nonces, :export_versions,
-        :report_templates, :reported_questionnaires, :invitation_templates, :text_message_templates,
-        :professionals, :dossier_epd_id_changes,
-        :patty_patients, :patients, :professionals_patients,
-        :email_bounces, :tokens, :measurement_sequences, :non_responses, :protocol_subscriptions,
-        :fill_out_requests, :fill_out_tasks, :activities, :invitations, :text_messages, :reports, :measurements_questionnaires,
-        :invitations_questionnaires, :quby_answers, :answers, :answers_reports, :answers_fill_out_requests,
-        :fill_out_sessions, :fill_out_sessions_questionnaires, :answers_fill_out_sessions, :delayed_jobs
-      ]
+      {
+        :highcharts_json_caches=>[:id],
+        :organizations=>[:id],
+        :protocols=>[:id],
+        :measurements=>[:parent_id, :id],
+        :teams=>[:id],
+        :api_tokens=>[:id],
+        :auth_tokens=>[:id],
+        :auth_nonces=>[:id],
+        :export_versions=>[:id],
+        :report_templates=>[:id],
+        :reported_questionnaires=>[:id],
+        :invitation_templates=>[:id],
+        :text_message_templates=>[:id],
+        :professionals=>[:id],
+        :dossier_epd_id_changes=>[:id],
+        :patty_patients=>[:id],
+        :patients=>[:id],
+        :professionals_patients=>[:professional_id, :patient_id],
+        :email_bounces=>[:id],
+        :tokens=>[:id],
+        :measurement_sequences=>[:id],
+        :non_responses=>[:id],
+        :protocol_subscriptions=>[:id],
+        :fill_out_requests=>[:id],
+        :fill_out_tasks=>[:id],
+        :activities=>[:id],
+        :invitations=>[:id],
+        :text_messages=>[:id],
+        :reports=>[:id],
+        :measurements_questionnaires=>[:id],
+        :invitations_questionnaires=>[:invitation_id, :questionnaire_id],
+        :quby_answers=>[:id],
+        :answers=>[:id],
+        :answers_reports=>[:id],
+        :answers_fill_out_requests=>[:answer_id, :fill_out_request_id],
+        :fill_out_sessions=>[:id],
+        :fill_out_sessions_questionnaires=>[:id],
+        :answers_fill_out_sessions=>[:id],
+        :delayed_jobs=>[:id]
+      }
     end
 
     # This describes all the integer ID columns that will be incremented for merging.

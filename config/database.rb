@@ -1,7 +1,7 @@
 require 'logger'
 require 'sequel'
 
-Config = {user: 'root', password: nil, host: 'localhost',
+Config = {user: 'root', password: ENV["MYSQL_PASSWORD"], host: 'localhost',
           source: 'r_demo', target: 'rom_development'}
 
 class DB

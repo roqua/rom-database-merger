@@ -1,7 +1,7 @@
 require_relative 'step'
 
 class IncrementIdColumns < Step
-  def perform(increment)
+  def perform(increment:)
     check_target_lower_than_increment(increment)
 
     source.run "SET foreign_key_checks = 0;"

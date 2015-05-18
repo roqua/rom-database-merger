@@ -6,7 +6,9 @@ NotificationSendJob = Struct.new(:protocol_subscription_id, :pending_answer_ids,
 WebhookJob = Struct.new(:type, :organization_id, :event, :object)
 
 class ModifyDelayedJobs < Step
-  def perform(increment:)
+  def perform(options = {})
+    increment = options.fetch(:increment)
+
     source[:delayed_jobs].each do |row|
       case row[:handler]
       when /ruby\/struct:A19Job/

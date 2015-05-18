@@ -1,7 +1,8 @@
 require_relative 'step'
 
 class IncrementIdColumns < Step
-  def perform(increment:)
+  def perform(options = {})
+    increment = options.fetch(:increment)
     check_target_lower_than_increment(increment)
 
     source.run "SET foreign_key_checks = 0;"
@@ -24,7 +25,7 @@ class IncrementIdColumns < Step
     Schema.id_columns.each do |table, columns|
       next if columns.empty?
 
-      updates = columns.map {|i| [i, Sequel.qualify(table, i) + increment] }.to_h
+      updates = Hash[columns.map {|i| [i, Sequel.qualify(table, i) + increment] }]
       source[table].update(updates)
     end
   end

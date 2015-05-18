@@ -6,9 +6,10 @@ class VerifySchema
   end
 
   def calculate_schema(db)
-    db.tables.map do |table|
+    schema = db.tables.map do |table|
       [table, db.schema(table)]
-    end.to_h
+    end
+    Hash[schema]
   end
 
   # Verifies the database schema against the known working schema. This

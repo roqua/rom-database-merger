@@ -17,4 +17,8 @@ VerifySchema.run!(TARGET_COPY)
 
 IncrementIdColumns.new(SOURCE_COPY, TARGET_COPY).perform(increment: 1_000_000)
 ModifyDelayedJobs.new(SOURCE_COPY, TARGET_COPY).perform(increment: 1_000_000)
+
+export_version_manager = ManageExportVersions.new(SOURCE_COPY, TARGET_COPY)
+export_version_manager.remember_and_clear
 ImportData.new(SOURCE_COPY, TARGET_COPY).perform
+export_version_manager.restore

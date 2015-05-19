@@ -1,5 +1,8 @@
 require 'logger'
 require 'sequel'
+require 'dotenv'
+
+Dotenv.load
 
 Config = {user: 'root', password: ENV["MYSQL_PASSWORD"], host: 'localhost',
           source: 'r_demo', target: 'rom_development'}

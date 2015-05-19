@@ -4,8 +4,13 @@ require 'dotenv'
 
 Dotenv.load
 
-Config = {user: 'root', password: ENV["MYSQL_PASSWORD"], host: 'localhost',
-          source: 'r_demo', target: 'rom_development'}
+Config = {
+  user: ENV["MYSQL_USER"] || 'root',
+  password: ENV["MYSQL_PASSWORD"],
+  host: ENV["MYSQL_HOST"] || 'localhost',
+  source: ENV.fetch("SOURCE"),
+  target: ENV.fetch("TARGET")
+}
 
 class DB
   def self.connect(db)

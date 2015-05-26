@@ -46,7 +46,7 @@ class ModifyDelayedJobs < Step
       #   delete(row)
       when /ruby\/object:RetrieveEmailBounces/
         delete(row)
-      when /ruby\/object:StatisticReporting/
+      when /ruby\/object:StatisticsReporting/
         delete(row)
       when /ruby\/object:UpdateSqlExports/
         delete(row)

@@ -10,7 +10,7 @@ Config = {
   host: ENV["MYSQL_HOST"] || 'localhost',
   source: ENV.fetch("SOURCE"),
   target: ENV.fetch("TARGET"),
-  increment: ENV.fetch("INCREMENT"),
+  increment: Integer(ENV.fetch("INCREMENT")),
   actually_merge: (ENV["ACTUAL"] == "true" ? true : false)
 }
 

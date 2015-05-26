@@ -78,3 +78,16 @@ ssh stag-rom-util1
 sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
 sudo chef-client
 ```
+
+### Step 4: Remove configs from deployer
+
+```
+cd deployer
+git rm apps/roqua/demo-staging.rb
+git commit -m 'Remove demo-staging (merged to rom)'
+git push
+```
+
+### Step 5: Scout
+
+Open the [Scout DelayedJob plugin template](https://scoutapp.com/roqua/roles/62131/plugin_templates/119651/trigger_templates). Decrement the alert limits to match the newly decreased number of applications running.

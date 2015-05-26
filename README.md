@@ -6,6 +6,8 @@ This repository contains scripts to merge two ROM-databases together.
 cd deployer
 bundle exec cap -f Capfile.roqua demo-staging maintenance:xon
 bundle exec cap -f Capfile.roqua demo-staging delayed_job:stop
+ssh deploy@stag-rom-util1
+echo "off" > /var/www/staging.demo.roqua.nl/current/config/cron_state
 ```
 
 ### Step 2: Merge the database

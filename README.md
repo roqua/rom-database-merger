@@ -57,14 +57,18 @@ Run chef on all servers. This should remove the old listener, and add the dns to
 
 ```bash
 ssh stag-rom-web1
+sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-web2
+sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-web3
+sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-util1
+sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
 sudo chef-client
 ```

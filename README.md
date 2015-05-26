@@ -8,10 +8,10 @@ This repository contains scripts to merge two ROM-databases together.
 
 ```
 cd deployer
-bundle exec cap -f Capfile.roqua demo-staging maintenance:xon
-bundle exec cap -f Capfile.roqua demo-staging delayed_job:stop
+bundle exec cap -f Capfile.roqua research-staging maintenance:xoff
+bundle exec cap -f Capfile.roqua research-staging delayed_job:stop
 ssh deploy@stag-rom-util1
-echo "off" > /var/www/staging.demo.roqua.nl/current/config/cron_state
+echo "off" > /var/www/staging.research.roqua.nl/current/config/cron_state
 ```
 
 ### Step 2: Merge the database
@@ -19,7 +19,7 @@ echo "off" > /var/www/staging.demo.roqua.nl/current/config/cron_state
 ```
 ssh deploy@stag-rom-util1
 cd rom-database-merger
-SOURCE="r_demo_staging" TARGET="r_rom_staging" ACTUAL=true INCREMENT=1000000 bundle exec ruby merge.rb
+SOURCE="r_research_staging" TARGET="r_rom_staging" ACTUAL=true INCREMENT=2000000 bundle exec ruby merge.rb
 ```
 
 ### Step 3: Update the webserver configs
@@ -31,7 +31,7 @@ knife data bag edit roqua staging
 Add `action: 'delete'` to the klant section, so it will be removed from Apache configs on `stag-rom-web*`:
 
 ```json
-    "demo": {
+    "research": {
       "action": "delete",
       ....
       "lb": {.......}
@@ -42,18 +42,18 @@ Copy that klant's `lb` section to the `lb` section from the rom klant:
 
 ```json
     "lb": {
-      "demo": {
+      "research": {
         "pem": "****",
         "lb_ip": "97",
         "dns": [
-          "staging.demo.roqua.nl",
-          "www-staging.demo.roqua.nl",
-          "epd-staging.demo.roqua.nl",
-          "admin-staging.demo.roqua.nl",
-          "api-staging.demo.roqua.nl",
-          "test.demo.roqua.nl",
-          "login-staging.demo.roqua.nl",
-          "demo.rom.roqua-staging.nl"
+          "staging.research.roqua.nl",
+          "www-staging.research.roqua.nl",
+          "epd-staging.research.roqua.nl",
+          "admin-staging.research.roqua.nl",
+          "api-staging.research.roqua.nl",
+          "test.research.roqua.nl",
+          "login-staging.research.roqua.nl",
+          "research.rom.roqua-staging.nl"
         ]
       }
     }
@@ -63,19 +63,19 @@ Run chef on all servers. This should remove the old listener, and add the dns to
 
 ```bash
 ssh stag-rom-web1
-sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
+sudo mv /var/www/staging.research.roqua.nl /var/www/staging.research.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-web2
-sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
+sudo mv /var/www/staging.research.roqua.nl /var/www/staging.research.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-web3
-sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
+sudo mv /var/www/staging.research.roqua.nl /var/www/staging.research.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-util1
-sudo mv /var/www/staging.demo.roqua.nl /var/www/staging.demo.roqua.nl.disabled
+sudo mv /var/www/staging.research.roqua.nl /var/www/staging.research.roqua.nl.disabled
 sudo chef-client
 ```
 
@@ -83,8 +83,8 @@ sudo chef-client
 
 ```
 cd deployer
-git rm apps/roqua/demo-staging.rb
-git commit -m 'Remove demo-staging (merged to rom)'
+git rm apps/roqua/research-staging.rb
+git commit -m 'Remove research-staging (merged to rom)'
 git push
 ```
 

@@ -1283,6 +1283,13 @@
     :db_type: datetime
     :type: :datetime
     :ruby_default: 
+- - :subject
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
+    :ruby_default: 
 :invitations:
 - - :id
   - :primary_key: true
@@ -1484,6 +1491,13 @@
     :default: 
     :db_type: int(11)
     :type: :integer
+    :ruby_default: 
+- - :subject
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: text
+    :type: :string
     :ruby_default: 
 :invitations_questionnaires:
 - - :invitation_id
@@ -3480,7 +3494,7 @@
     :max_length: 255
 - - :invitation_content
   - :primary_key: false
-    :allow_null: false
+    :allow_null: true
     :default: 
     :db_type: varchar(255)
     :type: :string
@@ -3528,6 +3542,13 @@
     :default: 
     :db_type: datetime
     :type: :datetime
+    :ruby_default: 
+- - :content
+  - :primary_key: false
+    :allow_null: false
+    :default: 
+    :db_type: text
+    :type: :string
     :ruby_default: 
 :text_messages:
 - - :id

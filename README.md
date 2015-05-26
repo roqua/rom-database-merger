@@ -1,5 +1,9 @@
 This repository contains scripts to merge two ROM-databases together.
 
+### Step 0:
+
+**DO NOT RUN THIS AROUND MIDNIGHT**
+
 ### Step 1: Disable application
 
 ```

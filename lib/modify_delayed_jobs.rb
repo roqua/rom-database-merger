@@ -24,6 +24,32 @@ class ModifyDelayedJobs < Step
         handler.protocol_subscription_id = handler.protocol_subscription_id + increment
         handler.pending_answer_ids = handler.pending_answer_ids.map{ |id| id + increment }
         update(row, handler)
+      when /ruby\/object:CleanupActiveRecordSessions/
+        delete(row)
+      when /ruby\/object:CleanupExpiredAnswers/
+        delete(row)
+      when /ruby\/object:CleanupExpiredAuthNonces/
+        delete(row)
+      when /ruby\/object:CleanupExpiredExportVersions/
+        delete(row)
+      when /ruby\/object:CleanupExpiredFillOutSessions/
+        delete(row)
+      when /ruby\/object:CleanupExpiredHighchartsJsonCaches/
+        delete(row)
+      when /ruby\/object:CleanupExpiredPatientDetails/
+        delete(row)
+      when /ruby\/object:CleanupMissedAnswerCallbacks/
+        delete(row)
+      when /ruby\/object:JanitorUnsentOrus/
+        delete(row)
+      # when /ruby\/object:PrepareProtocolSubscriptions/
+      #   delete(row)
+      when /ruby\/object:RetrieveEmailBounces/
+        delete(row)
+      when /ruby\/object:StatisticReporting/
+        delete(row)
+      when /ruby\/object:UpdateSqlExports/
+        delete(row)
       else
         raise "unknown type of job: #{row}"
       end

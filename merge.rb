@@ -10,16 +10,21 @@ require_relative 'lib/import_data'
 require_relative 'lib/modify_delayed_jobs'
 require_relative 'lib/manage_export_versions'
 
-SOURCE_COPY = CopyDatabase.copy(Config[:source], "#{Config[:source]}_temp")
-TARGET_COPY = CopyDatabase.copy(Config[:target], "#{Config[:target]}_temp")
+SOURCE = CopyDatabase.copy(Config[:source], "#{Config[:source]}_temp")
 
-VerifySchema.run!(SOURCE_COPY)
-VerifySchema.run!(TARGET_COPY)
+if Config[:actually_merge]
+  TARGET = DB.connect(Config[:target])
+else
+  TARGET = CopyDatabase.copy(Config[:target], "#{Config[:target]}_temp")
+end
 
-IncrementIdColumns.new(SOURCE_COPY, TARGET_COPY).perform(increment: 1_000_000)
-ModifyDelayedJobs.new(SOURCE_COPY, TARGET_COPY).perform(increment: 1_000_000)
+VerifySchema.run!(SOURCE)
+VerifySchema.run!(TARGET)
 
-export_version_manager = ManageExportVersions.new(SOURCE_COPY, TARGET_COPY)
+IncrementIdColumns.new(SOURCE, TARGET).perform(increment: Config[:increment])
+ModifyDelayedJobs.new(SOURCE, TARGET).perform(increment: Config[:increment])
+
+export_version_manager = ManageExportVersions.new(SOURCE, TARGET)
 export_version_manager.remember_and_clear
-ImportData.new(SOURCE_COPY, TARGET_COPY).perform
+ImportData.new(SOURCE, TARGET).perform
 export_version_manager.restore

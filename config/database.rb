@@ -9,7 +9,9 @@ Config = {
   password: ENV["MYSQL_PASSWORD"],
   host: ENV["MYSQL_HOST"] || 'localhost',
   source: ENV.fetch("SOURCE"),
-  target: ENV.fetch("TARGET")
+  target: ENV.fetch("TARGET"),
+  increment: ENV.fetch("INCREMENT"),
+  actually_merge: (ENV["ACTUAL"] == "true" ? true : false)
 }
 
 class DB

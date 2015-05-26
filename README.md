@@ -90,4 +90,4 @@ git push
 
 ### Step 5: Scout
 
-Open the [Scout DelayedJob plugin template](https://scoutapp.com/roqua/roles/62131/plugin_templates/119651/trigger_templates). Decrement the alert limits to match the newly decreased number of applications running.
+Open the [Scout DelayedJob plugin template](https://scoutapp.com/roqua/roles/139301/plugin_templates/294271/trigger_templates). Decrement the alert limits to match the newly decreased number of applications running.

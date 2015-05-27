@@ -363,6 +363,13 @@
     :db_type: int(11)
     :type: :integer
     :ruby_default: 
+- - :export_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
 :answers_fill_out_requests:
 - - :answer_id
   - :primary_key: false

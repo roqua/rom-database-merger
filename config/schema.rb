@@ -57,7 +57,7 @@ class Schema
     def id_columns
       {
         :activities=>[:id, :dossier_id, :actor_id, :subject_id],
-        :answers=>[:id, :protocol_id, :measurement_id, :completed_by, :subject_id, :questionnaire_id, :owner_id, :team_id, :fill_out_task_id, :remote_id, :non_response_id, :requester_id], # added completed_by
+        :answers=>[:id, :protocol_id, :measurement_id, :completed_by, :subject_id, :questionnaire_id, :owner_id, :team_id, :fill_out_task_id, :remote_id, :non_response_id, :requester_id], # added completed_by, leave out export_id (which is archived id)
         :answers_fill_out_requests=>[:answer_id, :fill_out_request_id],
         :answers_fill_out_sessions=>[:id, :answer_id, :fill_out_session_id],
         :answers_reports=>[:id, :answer_id, :report_id],

@@ -9,6 +9,7 @@ require_relative 'lib/increment_id_columns'
 require_relative 'lib/import_data'
 require_relative 'lib/modify_delayed_jobs'
 require_relative 'lib/manage_export_versions'
+require_relative 'lib/copy_answer_id_to_answer_export_id'
 
 SOURCE = CopyDatabase.copy(Config[:source], "#{Config[:source]}_temp")
 
@@ -21,6 +22,7 @@ end
 VerifySchema.run!(SOURCE)
 VerifySchema.run!(TARGET)
 
+CopyAnswerIdToAnswerExportId.new(SOURCE, TARGET).perform
 IncrementIdColumns.new(SOURCE, TARGET).perform(increment: Config[:increment])
 ModifyDelayedJobs.new(SOURCE, TARGET).perform(increment: Config[:increment])
 

@@ -19,6 +19,7 @@ echo "off" > /var/www/staging.ggzcentraal.roqua.nl/current/config/cron_state
 ```
 ssh deploy@stag-rom-util1
 cd rom-database-merger
+git pull
 SOURCE="r_ggzcentraal_staging" TARGET="r_rom_staging" ACTUAL=true INCREMENT=4000000 bundle exec ruby merge.rb
 ```
 

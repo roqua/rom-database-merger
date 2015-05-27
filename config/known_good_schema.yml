@@ -3401,6 +3401,29 @@
     :db_type: datetime
     :type: :datetime
     :ruby_default: 
+:team_protocols:
+- - :id
+  - :primary_key: true
+    :auto_increment: true
+    :allow_null: false
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :team_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
+- - :protocol_id
+  - :primary_key: false
+    :allow_null: true
+    :default: 
+    :db_type: int(11)
+    :type: :integer
+    :ruby_default: 
 :teams:
 - - :id
   - :primary_key: true

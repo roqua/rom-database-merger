@@ -8,10 +8,10 @@ This repository contains scripts to merge two ROM-databases together.
 
 ```
 cd deployer
-bundle exec cap -f Capfile.roqua lentis-staging maintenance:xoff
-bundle exec cap -f Capfile.roqua lentis-staging delayed_job:stop
+bundle exec cap -f Capfile.roqua ucp-staging maintenance:xoff
+bundle exec cap -f Capfile.roqua ucp-staging delayed_job:stop
 ssh deploy@stag-rom-util1
-echo "off" > /var/www/staging.lentis.roqua.nl/current/config/cron_state
+echo "off" > /var/www/staging.ucp.roqua.nl/current/config/cron_state
 ```
 
 ### Step 2: Merge the database
@@ -20,7 +20,7 @@ echo "off" > /var/www/staging.lentis.roqua.nl/current/config/cron_state
 ssh deploy@stag-rom-util1
 cd rom-database-merger
 git pull
-SOURCE="r_lentis_staging" TARGET="r_rom_staging" ACTUAL=true INCREMENT=9000000 bundle exec ruby merge.rb
+SOURCE="r_ucp_staging" TARGET="r_rom_staging" ACTUAL=true INCREMENT=10000000 bundle exec ruby merge.rb
 ```
 
 ### Step 3: Update the webserver configs
@@ -32,7 +32,7 @@ knife data bag edit roqua staging
 Add `action: 'delete'` to the klant section, so it will be removed from Apache configs on `stag-rom-web*`:
 
 ```json
-    "lentis": {
+    "ucp": {
       "action": "delete",
       ....
       "lb": {.......}
@@ -43,18 +43,18 @@ Copy that klant's `lb` section to the `lb` section from the rom klant:
 
 ```json
     "lb": {
-      "lentis": {
+      "ucp": {
         "pem": "****",
         "lb_ip": "97",
         "dns": [
-          "staging.lentis.roqua.nl",
-          "www-staging.lentis.roqua.nl",
-          "epd-staging.lentis.roqua.nl",
-          "admin-staging.lentis.roqua.nl",
-          "api-staging.lentis.roqua.nl",
-          "test.lentis.roqua.nl",
-          "login-staging.lentis.roqua.nl",
-          "lentis.rom.roqua-staging.nl"
+          "staging.ucp.roqua.nl",
+          "www-staging.ucp.roqua.nl",
+          "epd-staging.ucp.roqua.nl",
+          "admin-staging.ucp.roqua.nl",
+          "api-staging.ucp.roqua.nl",
+          "test.ucp.roqua.nl",
+          "login-staging.ucp.roqua.nl",
+          "ucp.rom.roqua-staging.nl"
         ]
       }
     }
@@ -64,19 +64,19 @@ Run chef on all servers. This should remove the old listener, and add the dns to
 
 ```bash
 ssh stag-rom-web1
-sudo mv /var/www/staging.lentis.roqua.nl /var/www/staging.lentis.roqua.nl.disabled
+sudo mv /var/www/staging.ucp.roqua.nl /var/www/staging.ucp.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-web2
-sudo mv /var/www/staging.lentis.roqua.nl /var/www/staging.lentis.roqua.nl.disabled
+sudo mv /var/www/staging.ucp.roqua.nl /var/www/staging.ucp.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-web3
-sudo mv /var/www/staging.lentis.roqua.nl /var/www/staging.lentis.roqua.nl.disabled
+sudo mv /var/www/staging.ucp.roqua.nl /var/www/staging.ucp.roqua.nl.disabled
 sudo chef-client
 
 ssh stag-rom-util1
-sudo mv /var/www/staging.lentis.roqua.nl /var/www/staging.lentis.roqua.nl.disabled
+sudo mv /var/www/staging.ucp.roqua.nl /var/www/staging.ucp.roqua.nl.disabled
 sudo chef-client
 ```
 
@@ -84,8 +84,8 @@ sudo chef-client
 
 ```
 cd deployer
-git rm apps/roqua/lentis-staging.rb
-git commit -m 'Remove lentis-staging (merged to rom)'
+git rm apps/roqua/ucp-staging.rb
+git commit -m 'Remove ucp-staging (merged to rom)'
 git push
 ```
 

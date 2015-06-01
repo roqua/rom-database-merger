@@ -8,31 +8,31 @@ This repository contains scripts to merge two ROM-databases together.
 
 ```
 cd deployer
-bundle exec cap -f Capfile.roqua umcg-staging maintenance:xoff
-bundle exec cap -f Capfile.roqua umcg-staging delayed_job:stop
-ssh deploy@stag-rom-util1
-echo "off" > /var/www/staging.umcg.roqua.nl/current/config/cron_state
+bundle exec cap -f Capfile.roqua demo-production maintenance:xoff
+bundle exec cap -f Capfile.roqua demo-production delayed_job:stop
+ssh deploy@prod-rom-util1
+echo "off" > /var/www/production.demo.roqua.nl/current/config/cron_state
 ```
 
 ### Step 2: Merge the database
 
 ```
-ssh deploy@stag-rom-util1
+ssh deploy@prod-rom-util1
 cd rom-database-merger
 git pull
-SOURCE="r_umcg_staging" TARGET="r_rom_staging" ACTUAL=true INCREMENT=11000000 bundle exec ruby merge.rb
+SOURCE="r_demo_produc" TARGET="r_rom_produc" INCREMENT=10000000 bundle exec ruby merge.rb
 ```
 
 ### Step 3: Update the webserver configs
 
 ```
-knife data bag edit roqua staging
+knife data bag edit roqua production
 ```
 
-Add `action: 'delete'` to the klant section, so it will be removed from Apache configs on `stag-rom-web*`:
+Add `action: 'delete'` to the klant section, so it will be removed from Apache configs on `prod-rom-web*`:
 
 ```json
-    "umcg": {
+    "demo": {
       "action": "delete",
       ....
       "lb": {.......}
@@ -43,18 +43,18 @@ Copy that klant's `lb` section to the `lb` section from the rom klant:
 
 ```json
     "lb": {
-      "umcg": {
+      "demo": {
         "pem": "****",
         "lb_ip": "97",
         "dns": [
-          "staging.umcg.roqua.nl",
-          "www-staging.umcg.roqua.nl",
-          "epd-staging.umcg.roqua.nl",
-          "admin-staging.umcg.roqua.nl",
-          "api-staging.umcg.roqua.nl",
-          "test.umcg.roqua.nl",
-          "login-staging.umcg.roqua.nl",
-          "umcg.rom.roqua-staging.nl"
+          "production.demo.roqua.nl",
+          "www-production.demo.roqua.nl",
+          "epd-production.demo.roqua.nl",
+          "admin-production.demo.roqua.nl",
+          "api-production.demo.roqua.nl",
+          "test.demo.roqua.nl",
+          "login-production.demo.roqua.nl",
+          "demo.rom.roqua-production.nl"
         ]
       }
     }
@@ -63,20 +63,20 @@ Copy that klant's `lb` section to the `lb` section from the rom klant:
 Run chef on all servers. This should remove the old listener, and add the dns to the new one. Should be working automatically.
 
 ```bash
-ssh stag-rom-web1
-sudo mv /var/www/staging.umcg.roqua.nl /var/www/staging.umcg.roqua.nl.disabled
+ssh prod-rom-web1
+sudo mv /var/www/production.demo.roqua.nl /var/www/production.demo.roqua.nl.disabled
 sudo chef-client
 
-ssh stag-rom-web2
-sudo mv /var/www/staging.umcg.roqua.nl /var/www/staging.umcg.roqua.nl.disabled
+ssh prod-rom-web2
+sudo mv /var/www/production.demo.roqua.nl /var/www/production.demo.roqua.nl.disabled
 sudo chef-client
 
-ssh stag-rom-web3
-sudo mv /var/www/staging.umcg.roqua.nl /var/www/staging.umcg.roqua.nl.disabled
+ssh prod-rom-web3
+sudo mv /var/www/production.demo.roqua.nl /var/www/production.demo.roqua.nl.disabled
 sudo chef-client
 
-ssh stag-rom-util1
-sudo mv /var/www/staging.umcg.roqua.nl /var/www/staging.umcg.roqua.nl.disabled
+ssh prod-rom-util1
+sudo mv /var/www/production.demo.roqua.nl /var/www/production.demo.roqua.nl.disabled
 sudo chef-client
 ```
 
@@ -84,8 +84,8 @@ sudo chef-client
 
 ```
 cd deployer
-git rm apps/roqua/umcg-staging.rb
-git commit -m 'Remove umcg-staging (merged to rom)'
+git rm apps/roqua/demo-production.rb
+git commit -m 'Remove demo-production (merged to rom)'
 git push
 ```
 

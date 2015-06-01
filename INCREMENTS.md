@@ -1,0 +1,12 @@
+ 10000000 production.demo.roqua.nl
+ 20000000 production.accare.roqua.nl
+ 30000000 production.ggzcentraal.roqua.nl
+ 40000000 production.ggzdrenthe.roqua.nl
+ 50000000 production.ggzfriesland.roqua.nl
+ 60000000 production.ggzoostbrabant.roqua.nl
+ 70000000 production.ggzwnb.roqua.nl
+ 80000000 production.lentis.roqua.nl
+ 90000000 production.research.roqua.nl
+100000000 production.ucp.roqua.nl
+110000000 production.umcg.roqua.nl
+100000000 production.rom.roqua.nl
